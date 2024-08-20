@@ -12,7 +12,7 @@ template<typename T>
 struct mat<2, 2, T>
 {
 public:
-    constexpr mat() : data{} {}
+    constexpr mat();
 
 public:
     static constexpr std::size_t size() { return 4; }
@@ -30,6 +30,10 @@ public:
         T data[4];
     };
 };
+
+template<typename T>
+constexpr mat<2, 2, T>::mat()
+    : data{} {}
 
 } // namespace swl
 

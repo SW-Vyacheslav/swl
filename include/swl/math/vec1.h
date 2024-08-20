@@ -10,30 +10,14 @@ template<typename T>
 struct vec<1, T>
 {
 public:
-    constexpr vec()
-        : x(0) {}
+    constexpr vec();
+    constexpr vec(const vec<1, T>& other);
+    constexpr explicit vec(T scalar);
 
-    constexpr vec(const vec<1, T>& other)
-        : x(other.x) {}
-
-    explicit vec(T scalar)
-        : x(scalar) {}
-
-    template<typename A>
-    explicit vec(const vec<1, A>& other)
-        : x(static_cast<T>(other.x)) {}
-
-    template<typename A>
-    explicit vec(const vec<2, A>& other)
-        : x(static_cast<T>(other.x)) {}
-
-    template<typename A>
-    explicit vec(const vec<3, A>& other)
-        : x(static_cast<T>(other.x)) {}
-
-    template<typename A>
-    explicit vec(const vec<4, A>& other)
-        : x(static_cast<T>(other.x)) {}
+    template<typename A> constexpr explicit vec(const vec<1, A>& other);
+    template<typename A> constexpr explicit vec(const vec<2, A>& other);
+    template<typename A> constexpr explicit vec(const vec<3, A>& other);
+    template<typename A> constexpr explicit vec(const vec<4, A>& other);
 
 public:
     static constexpr std::size_t size() { return 1; }
@@ -59,6 +43,38 @@ public:
         T data[1];
     };
 };
+
+template<typename T>
+constexpr vec<1, T>::vec()
+    : x(0) {}
+
+template<typename T>
+constexpr vec<1, T>::vec(const vec<1, T>& other)
+    : x(other.x) {}
+
+template<typename T>
+constexpr vec<1, T>::vec(T scalar)
+    : x(scalar) {}
+
+template<typename T>
+template<typename A>
+constexpr vec<1, T>::vec(const vec<1, A>& other)
+    : x(static_cast<T>(other.x)) {}
+
+template<typename T>
+template<typename A>
+constexpr vec<1, T>::vec(const vec<2, A>& other)
+    : x(static_cast<T>(other.x)) {}
+
+template<typename T>
+template<typename A>
+constexpr vec<1, T>::vec(const vec<3, A>& other)
+    : x(static_cast<T>(other.x)) {}
+
+template<typename T>
+template<typename A>
+constexpr vec<1, T>::vec(const vec<4, A>& other)
+    : x(static_cast<T>(other.x)) {}
 
 template<typename T>
 constexpr T& vec<1, T>::operator[](std::size_t idx)
