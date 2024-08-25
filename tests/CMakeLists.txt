@@ -22,3 +22,10 @@ target_link_libraries(${PROJECT_NAME}
         Catch2::Catch2WithMain
         swl
 )
+
+set_target_properties(${PROJECT_NAME}
+    PROPERTIES
+        CXX_STANDARD          17
+        CXX_STANDARD_REQUIRED ON
+        CXX_EXTENSIONS        OFF
+)

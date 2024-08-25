@@ -5,5 +5,6 @@
 #include <cmath>
 #include <cstring>
 #include <string>
+#include <type_traits>
 
 #endif // SWL_PCH_H_
