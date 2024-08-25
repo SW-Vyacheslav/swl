@@ -125,6 +125,20 @@ constexpr vec<3, T>::vec(const vec<4, T0>& other)
       z(static_cast<T>(other.z)) {}
 
 template<typename T>
+constexpr T& vec<3, T>::operator[](std::size_t idx)
+{
+    // TODO: ASSERT OUT OF BOUNDS
+    return data[idx];
+}
+
+template<typename T>
+constexpr const T& vec<3, T>::operator[](std::size_t idx) const
+{
+    // TODO: ASSERT OUT OF BOUNDS
+    return data[idx];
+}
+
+template<typename T>
 constexpr vec<3, T>& vec<3, T>::operator=(const vec<3, T>& rhs)
 {
     x = rhs.x;

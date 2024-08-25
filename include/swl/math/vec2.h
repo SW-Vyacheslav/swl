@@ -27,6 +27,7 @@ public:
 
 public:
     static constexpr std::size_t size() { return 2; }
+    static constexpr std::size_t sizeb() { return 2 * sizeof(T); }
     constexpr T& operator[](std::size_t idx);
     constexpr const T& operator[](std::size_t idx) const;
 

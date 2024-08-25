@@ -26,6 +26,7 @@ public:
 
     template<typename T0, typename T1> constexpr vec(const vec<2, T0>& xy, T1 z);
     template<typename T0, typename T1> constexpr vec(const vec<2, T0>& xy, const vec<1, T1>& z);
+
     template<typename T0, typename T1> constexpr vec(T0 x, const vec<2, T1>& yz);
     template<typename T0, typename T1> constexpr vec(const vec<1, T0>& x, const vec<2, T1>& yz);
 
@@ -35,6 +36,7 @@ public:
 
 public:
     static constexpr std::size_t size() { return 3; }
+    static constexpr std::size_t sizeb() { return 3 * sizeof(T); }
     constexpr T& operator[](std::size_t idx);
     constexpr const T& operator[](std::size_t idx) const;
 
