@@ -4,7 +4,7 @@
 #include "swl/math/common.h"
 #include "swl/math/vec2.h"
 
-namespace swl
+namespace sw
 {
 
 // TODO
@@ -35,6 +35,6 @@ template<typename T>
 constexpr mat<2, 2, T>::mat()
     : data{} {}
 
-} // namespace swl
+} // namespace sw
 
 #endif // SWL_MATH_MAT2X2_H_

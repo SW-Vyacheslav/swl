@@ -3,7 +3,7 @@
 
 #include "swl/math/common.h"
 
-namespace swl
+namespace sw
 {
 
 template<typename T>
@@ -15,14 +15,15 @@ public:
     constexpr explicit vec(T scalar);
     constexpr vec(T x, T y);
 
-    template<typename A, typename B> constexpr vec(A x, B y);
-    template<typename A, typename B> constexpr vec(const vec<1, A>& x, B y);
-    template<typename A, typename B> constexpr vec(A x, const vec<1, B>& y);
-    template<typename A, typename B> constexpr vec(const vec<1, A>& x, const vec<1, B>& y);
-    template<typename A> constexpr explicit vec(const vec<1, A>& other);
-    template<typename A> constexpr explicit vec(const vec<2, A>& other);
-    template<typename A> constexpr explicit vec(const vec<3, A>& other);
-    template<typename A> constexpr explicit vec(const vec<4, A>& other);
+    template<typename T0, typename T1> constexpr vec(T0 x, T1 y);
+    template<typename T0, typename T1> constexpr vec(const vec<1, T0>& x, T1 y);
+    template<typename T0, typename T1> constexpr vec(T0 x, const vec<1, T1>& y);
+    template<typename T0, typename T1> constexpr vec(const vec<1, T0>& x, const vec<1, T1>& y);
+
+    template<typename T0> constexpr explicit vec(const vec<1, T0>& other);
+    template<typename T0> constexpr explicit vec(const vec<2, T0>& other);
+    template<typename T0> constexpr explicit vec(const vec<3, T0>& other);
+    template<typename T0> constexpr explicit vec(const vec<4, T0>& other);
 
 public:
     static constexpr std::size_t size() { return 2; }
@@ -30,7 +31,24 @@ public:
     constexpr const T& operator[](std::size_t idx) const;
 
 public:
+    constexpr vec<2, T>& operator=(const vec<2, T>& rhs);
+    template<typename T0> constexpr vec<2, T>& operator=(const vec<2, T0>& rhs);
 
+    template<typename T0> constexpr vec<2, T>& operator+=(T0 rhs);
+    template<typename T0> constexpr vec<2, T>& operator+=(const vec<1, T0>& rhs);
+    template<typename T0> constexpr vec<2, T>& operator+=(const vec<2, T0>& rhs);
+
+    template<typename T0> constexpr vec<2, T>& operator-=(T0 rhs);
+    template<typename T0> constexpr vec<2, T>& operator-=(const vec<1, T0>& rhs);
+    template<typename T0> constexpr vec<2, T>& operator-=(const vec<2, T0>& rhs);
+
+    template<typename T0> constexpr vec<2, T>& operator*=(T0 rhs);
+    template<typename T0> constexpr vec<2, T>& operator*=(const vec<1, T0>& rhs);
+    template<typename T0> constexpr vec<2, T>& operator*=(const vec<2, T0>& rhs);
+
+    template<typename T0> constexpr vec<2, T>& operator/=(T0 rhs);
+    template<typename T0> constexpr vec<2, T>& operator/=(const vec<1, T0>& rhs);
+    template<typename T0> constexpr vec<2, T>& operator/=(const vec<2, T0>& rhs);
 
 public:
     union
@@ -40,62 +58,37 @@ public:
     };
 };
 
-template<typename T>
-constexpr vec<2, T>::vec()
-    : x(0), y(0) {}
+template<typename T> constexpr vec<2, T> operator-(const vec<2, T>& rhs);
 
-template<typename T>
-constexpr vec<2, T>::vec(const vec<2, T>& other)
-    : x(other.x), y(other.y) {}
+template<typename T> constexpr vec<2, T> operator+(const vec<2, T>& lhs, T rhs);
+template<typename T> constexpr vec<2, T> operator+(const vec<2, T>& lhs, const vec<1, T>& rhs);
+template<typename T> constexpr vec<2, T> operator+(T lhs, const vec<2, T>& rhs);
+template<typename T> constexpr vec<2, T> operator+(const vec<1, T>& lhs, const vec<2, T>& rhs);
+template<typename T> constexpr vec<2, T> operator+(const vec<2, T>& lhs, const vec<2, T>& rhs);
 
-template<typename T>
-constexpr vec<2, T>::vec(T scalar)
-    : x(scalar), y(scalar) {}
+template<typename T> constexpr vec<2, T> operator-(const vec<2, T>& lhs, T rhs);
+template<typename T> constexpr vec<2, T> operator-(const vec<2, T>& lhs, const vec<1, T>& rhs);
+template<typename T> constexpr vec<2, T> operator-(T lhs, const vec<2, T>& rhs);
+template<typename T> constexpr vec<2, T> operator-(const vec<1, T>& lhs, const vec<2, T>& rhs);
+template<typename T> constexpr vec<2, T> operator-(const vec<2, T>& lhs, const vec<2, T>& rhs);
 
-template<typename T>
-constexpr vec<2, T>::vec(T x, T y)
-    : x(x), y(y) {}
+template<typename T> constexpr vec<2, T> operator*(const vec<2, T>& lhs, T rhs);
+template<typename T> constexpr vec<2, T> operator*(const vec<2, T>& lhs, const vec<1, T>& rhs);
+template<typename T> constexpr vec<2, T> operator*(T lhs, const vec<2, T>& rhs);
+template<typename T> constexpr vec<2, T> operator*(const vec<1, T>& lhs, const vec<2, T>& rhs);
+template<typename T> constexpr vec<2, T> operator*(const vec<2, T>& lhs, const vec<2, T>& rhs);
 
-template<typename T>
-template<typename A, typename B>
-constexpr vec<2, T>::vec(A x, B y)
-    : x(static_cast<T>(x)), y(static_cast<T>(y)) {}
+template<typename T> constexpr vec<2, T> operator/(const vec<2, T>& lhs, T rhs);
+template<typename T> constexpr vec<2, T> operator/(const vec<2, T>& lhs, const vec<1, T>& rhs);
+template<typename T> constexpr vec<2, T> operator/(T lhs, const vec<2, T>& rhs);
+template<typename T> constexpr vec<2, T> operator/(const vec<1, T>& lhs, const vec<2, T>& rhs);
+template<typename T> constexpr vec<2, T> operator/(const vec<2, T>& lhs, const vec<2, T>& rhs);
 
-template<typename T>
-template<typename A, typename B>
-constexpr vec<2, T>::vec(const vec<1, A>& x, B y)
-    : x(static_cast<T>(x.x)), y(static_cast<T>(y)) {}
+template<typename T> constexpr bool operator==(const vec<2, T>& lhs, const vec<2, T>& rhs);
+template<typename T> constexpr bool operator!=(const vec<2, T>& lhs, const vec<2, T>& rhs);
 
-template<typename T>
-template<typename A, typename B>
-constexpr vec<2, T>::vec(A x, const vec<1, B>& y)
-    : x(static_cast<T>(x)), y(static_cast<T>(y.y)) {}
+} // namespace sw
 
-template<typename T>
-template<typename A, typename B>
-constexpr vec<2, T>::vec(const vec<1, A>& x, const vec<1, B>& y)
-    : x(static_cast<T>(x.x)), y(static_cast<T>(y.y)) {}
-
-template<typename T>
-template<typename A>
-constexpr vec<2, T>::vec(const vec<1, A>& other)
-    : x(static_cast<T>(other.x)), y(0) {}
-
-template<typename T>
-template<typename A>
-constexpr vec<2, T>::vec(const vec<2, A>& other)
-    : x(static_cast<T>(other.x)), y(static_cast<T>(other.y)) {}
-
-template<typename T>
-template<typename A>
-constexpr vec<2, T>::vec(const vec<3, A>& other)
-    : x(static_cast<T>(other.x)), y(static_cast<T>(other.y)) {}
-
-template<typename T>
-template<typename A>
-constexpr vec<2, T>::vec(const vec<4, A>& other)
-    : x(static_cast<T>(other.x)), y(static_cast<T>(other.y)) {}
-
-} // namespace swl
+#include "swl/math/inl/vec2.inl"
 
 #endif // SWL_MATH_VEC2_H_

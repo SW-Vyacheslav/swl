@@ -3,7 +3,7 @@
 
 #include "swl/math/common.h"
 
-namespace swl
+namespace sw
 {
 
 template<typename T>
@@ -25,18 +25,8 @@ public:
     };
 };
 
-template<typename T>
-constexpr vec<4, T>::vec()
-    : x(0), y(0), z(0), w(0) {}
+} // namespace sw
 
-template<typename T>
-constexpr vec<4, T>::vec(T scalar)
-    : x(scalar), y(scalar), z(scalar), w(scalar) {}
-
-template<typename T>
-constexpr vec<4, T>::vec(T x, T y, T z, T w)
-    : x(x), y(y), z(z), w(w) {}
-
-} // namespace swl
+#include "swl/math/inl/vec4.inl"
 
 #endif // SWL_MATH_VEC4_H_

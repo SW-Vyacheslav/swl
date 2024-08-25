@@ -7,5 +7,5 @@
 
 TEST_CASE("test")
 {
-    swl::vec1d v1, v2;
+    sw::vec1d v1, v2;
 }
