@@ -4,7 +4,7 @@
 #include "swl/math/common.h"
 #include "swl/math/vec2.h"
 
-namespace sw
+namespace swl
 {
 
 // TODO
@@ -16,12 +16,12 @@ public:
 
 public:
     static constexpr std::size_t size() { return 4; }
-    constexpr T& operator[](std::size_t idx);
-    constexpr const T& operator[](std::size_t idx) const;
-    constexpr vec<2, T>& row(std::size_t idx);
-    constexpr const vec<2, T>& row(std::size_t idx) const;
-    constexpr vec<2, T>& col(std::size_t idx);
-    constexpr const vec<2, T>& col(std::size_t idx) const;
+    // constexpr T& operator[](std::size_t idx);
+    // constexpr const T& operator[](std::size_t idx) const;
+    // constexpr vec<2, T>& row(std::size_t idx);
+    // constexpr const vec<2, T>& row(std::size_t idx) const;
+    // constexpr vec<2, T>& col(std::size_t idx);
+    // constexpr const vec<2, T>& col(std::size_t idx) const;
 
 public:
     union
@@ -35,6 +35,6 @@ template<typename T>
 constexpr mat<2, 2, T>::mat()
     : data{} {}
 
-} // namespace sw
+} // namespace swl
 
 #endif // SWL_MATH_MAT2X2_H_

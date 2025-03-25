@@ -3,7 +3,7 @@
 
 #include "swl/math/common.h"
 
-namespace sw
+namespace swl
 {
 
 template<typename T>
@@ -88,7 +88,7 @@ template<typename T> constexpr vec<2, T> operator/(const vec<2, T>& lhs, const v
 template<typename T> constexpr bool operator==(const vec<2, T>& lhs, const vec<2, T>& rhs);
 template<typename T> constexpr bool operator!=(const vec<2, T>& lhs, const vec<2, T>& rhs);
 
-} // namespace sw
+} // namespace swl
 
 #include "swl/math/inl/vec2.inl"
 

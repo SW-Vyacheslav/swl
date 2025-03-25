@@ -11,7 +11,6 @@ Library for practice and my projects
 ### TODO
 
 * **swl_math** - math module
-* **swl_ecs** - Entity Component System (ECS) module
 
 # Dependencies
 

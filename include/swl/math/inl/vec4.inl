@@ -1,6 +1,6 @@
 #include "swl/math/vec4.h"
 
-namespace sw
+namespace swl
 {
 
 template<typename T>
@@ -666,4 +666,4 @@ constexpr bool operator!=(const vec<4, T>& lhs, const vec<4, T>& rhs)
     return !(lhs == rhs);
 }
 
-} // namespace sw
+} // namespace swl

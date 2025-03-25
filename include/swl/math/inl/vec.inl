@@ -1,6 +1,6 @@
 #include "swl/math/vec.h"
 
-namespace sw
+namespace swl
 {
 
 template<std::size_t Size, typename T>
@@ -86,4 +86,4 @@ vec<3, T> cross(const vec<3, T>& v1, const vec<3, T>& v2)
                      v1.x * v2.y - v1.y * v2.x);
 }
 
-} // namespace sw
+} // namespace swl

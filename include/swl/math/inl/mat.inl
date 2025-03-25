@@ -1,8 +1,8 @@
 #include "swl/math/mat.h"
 
-namespace sw
+namespace swl
 {
 
 
 
-} // namespace sw
+} // namespace swl

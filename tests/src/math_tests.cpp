@@ -8,7 +8,7 @@
 
 TEST_CASE("TEST_VECTOR_OPERATIONS")
 {
-    using namespace sw;
+    using namespace swl;
 
     vec3f v1(6, 2.0f, 3.0);
     vec3f v2(3.0f, 2, 1.0);

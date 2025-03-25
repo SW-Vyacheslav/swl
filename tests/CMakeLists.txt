@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.21.0)
-project(swl_tests LANGUAGES CXX)
+project(swl_tests)
 
-message(STATUS "Build ${PROJECT_NAME}")
+enable_language(CXX)
+
+message(STATUS "Build swl_tests")
 
 Include(FetchContent)
 
@@ -13,19 +15,19 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(${PROJECT_NAME}
+add_executable(swl_tests
     src/math_tests.cpp
 )
 
-target_link_libraries(${PROJECT_NAME}
-    PRIVATE
-        Catch2::Catch2WithMain
-        swl
-)
-
-set_target_properties(${PROJECT_NAME}
+set_target_properties(swl_tests
     PROPERTIES
         CXX_STANDARD          17
         CXX_STANDARD_REQUIRED ON
         CXX_EXTENSIONS        OFF
+)
+
+target_link_libraries(swl_tests
+    PRIVATE
+        Catch2::Catch2WithMain
+        swl
 )

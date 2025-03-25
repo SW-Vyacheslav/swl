@@ -1,7 +1,7 @@
 #ifndef SWL_MATH_COMMON_H_
 #define SWL_MATH_COMMON_H_
 
-namespace sw
+namespace swl
 {
 
 template<std::size_t Size, typename T> struct vec;
@@ -19,16 +19,14 @@ template<typename T> using vec4 = vec<4, T>;
 
 SWL_MATH_DEFINE_VEC_TYPES(double, d)
 SWL_MATH_DEFINE_VEC_TYPES(float, f)
-SWL_MATH_DEFINE_VEC_TYPES(uint64_t, u64)
-SWL_MATH_DEFINE_VEC_TYPES(int64_t, s64)
-SWL_MATH_DEFINE_VEC_TYPES(uint32_t, u32)
-SWL_MATH_DEFINE_VEC_TYPES(int32_t, s32)
-SWL_MATH_DEFINE_VEC_TYPES(uint16_t, u16)
-SWL_MATH_DEFINE_VEC_TYPES(int16_t, s16)
-SWL_MATH_DEFINE_VEC_TYPES(uint8_t, u8)
-SWL_MATH_DEFINE_VEC_TYPES(int8_t, s8)
-
-#undef SWL_MATH_DEFINE_VEC_TYPES
+SWL_MATH_DEFINE_VEC_TYPES(std::uint64_t, u64)
+SWL_MATH_DEFINE_VEC_TYPES(std::int64_t, i64)
+SWL_MATH_DEFINE_VEC_TYPES(std::uint32_t, u32)
+SWL_MATH_DEFINE_VEC_TYPES(std::int32_t, i32)
+SWL_MATH_DEFINE_VEC_TYPES(std::uint16_t, u16)
+SWL_MATH_DEFINE_VEC_TYPES(std::int16_t, i16)
+SWL_MATH_DEFINE_VEC_TYPES(std::uint8_t, u8)
+SWL_MATH_DEFINE_VEC_TYPES(std::int8_t, i8)
 
 template<std::size_t Rows, std::size_t Cols, typename T> struct mat;
 
@@ -55,17 +53,15 @@ template<typename T> using mat4x4 = mat<4, 4, T>;
 
 SWL_MATH_DEFINE_MAT_TYPES(double, d)
 SWL_MATH_DEFINE_MAT_TYPES(float, f)
-SWL_MATH_DEFINE_MAT_TYPES(uint64_t, u64)
-SWL_MATH_DEFINE_MAT_TYPES(int64_t, s64)
-SWL_MATH_DEFINE_MAT_TYPES(uint32_t, u32)
-SWL_MATH_DEFINE_MAT_TYPES(int32_t, s32)
-SWL_MATH_DEFINE_MAT_TYPES(uint16_t, u16)
-SWL_MATH_DEFINE_MAT_TYPES(int16_t, s16)
-SWL_MATH_DEFINE_MAT_TYPES(uint8_t, u8)
-SWL_MATH_DEFINE_MAT_TYPES(int8_t, s8)
+SWL_MATH_DEFINE_MAT_TYPES(std::uint64_t, u64)
+SWL_MATH_DEFINE_MAT_TYPES(std::int64_t, i64)
+SWL_MATH_DEFINE_MAT_TYPES(std::uint32_t, u32)
+SWL_MATH_DEFINE_MAT_TYPES(std::int32_t, i32)
+SWL_MATH_DEFINE_MAT_TYPES(std::uint16_t, u16)
+SWL_MATH_DEFINE_MAT_TYPES(std::int16_t, i16)
+SWL_MATH_DEFINE_MAT_TYPES(std::uint8_t, u8)
+SWL_MATH_DEFINE_MAT_TYPES(std::int8_t, i8)
 
-#undef SWL_MATH_DEFINE_MAT_TYPES
-
-} // namespace sw
+} // namespace swl
 
 #endif // SWL_MATH_COMMON_H_
