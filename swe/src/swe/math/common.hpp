@@ -1,5 +1,5 @@
-#ifndef SWE_MATH_COMMON_H_
-#define SWE_MATH_COMMON_H_
+#ifndef SWE_MATH_COMMON_HPP_
+#define SWE_MATH_COMMON_HPP_
 
 #include <cstdint>
 
@@ -70,4 +70,4 @@ SWE_MATH_DEFINE_MAT_TYPES(std::int8_t, i8)
 
 } // namespace swe
 
-#endif // SWE_MATH_COMMON_H_
+#endif // SWE_MATH_COMMON_HPP_

@@ -1,4 +1,4 @@
-#include "swe/math/vec3.h"
+#include "swe/math/vec3.hpp"
 
 namespace swe
 {

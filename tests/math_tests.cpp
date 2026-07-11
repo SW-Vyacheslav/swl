@@ -3,12 +3,12 @@
 
 #include <fmt/format.h>
 #include <fmt/ranges.h>
-#include <swe/math.h>
+#include <swe/math.hpp>
+
+using namespace swe;
 
 TEST_CASE("TEST_VECTOR_OPERATIONS")
 {
-    using namespace swe;
-
     vec3f v1(6, 2.0f, 3.0);
     vec3f v2(3.0f, 2, 1.0);
     vec3f v3(1, 3, 4);

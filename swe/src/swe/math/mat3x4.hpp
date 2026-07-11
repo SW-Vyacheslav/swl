@@ -1,15 +1,15 @@
-#ifndef SWE_MATH_MAT4X3_H_
-#define SWE_MATH_MAT4X3_H_
+#ifndef SWE_MATH_MAT3X4_HPP_
+#define SWE_MATH_MAT3X4_HPP_
 
-#include "swe/math/common.h"
-#include "swe/math/vec3.h"
+#include "swe/math/common.hpp"
+#include "swe/math/vec4.hpp"
 
 namespace swe
 {
 
 // TODO
 template<typename T>
-struct mat<4, 3, T>
+struct mat<3, 4, T>
 {
 public:
     constexpr mat();
@@ -20,15 +20,15 @@ public:
 public:
     union
     {
-        vec<3, T> rows[4];
+        vec<4, T> rows[3];
         T data[12];
     };
 };
 
 template<typename T>
-constexpr mat<4, 3, T>::mat()
+constexpr mat<3, 4, T>::mat()
     : data{} {}
 
 } // namespace swe
 
-#endif // SWE_MATH_MAT4X3_H_
+#endif // SWE_MATH_MAT3X4_HPP_

@@ -1,4 +1,4 @@
-#include "math.h"
+#include "math.hpp"
 
 #define SWE_MATH_DEFINE_VEC_EXPLICIT_INSTANTIATION(t) \
     template struct vec<1, t>;                        \

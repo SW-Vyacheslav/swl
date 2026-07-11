@@ -22,3 +22,5 @@ target_link_libraries(swe_tests
         Catch2::Catch2WithMain
         swe
 )
+
+message(STATUS)

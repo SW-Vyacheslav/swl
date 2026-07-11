@@ -1,4 +1,4 @@
-#include "swe/math/mat.h"
+#include "swe/math/mat.hpp"
 
 namespace swe
 {

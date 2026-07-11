@@ -1,8 +1,8 @@
-#ifndef SWE_MATH_MAT4X4_H_
-#define SWE_MATH_MAT4X4_H_
+#ifndef SWE_MATH_MAT4X4_HPP_
+#define SWE_MATH_MAT4X4_HPP_
 
-#include "swe/math/common.h"
-#include "swe/math/vec4.h"
+#include "swe/math/common.hpp"
+#include "swe/math/vec4.hpp"
 
 namespace swe
 {
@@ -31,4 +31,4 @@ constexpr mat<4, 4, T>::mat()
 
 } // namespace swe
 
-#endif // SWE_MATH_MAT4X4_H_
+#endif // SWE_MATH_MAT4X4_HPP_

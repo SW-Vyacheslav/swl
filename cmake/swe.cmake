@@ -13,14 +13,34 @@ set_target_properties(swe
 
 target_sources(swe
     PRIVATE
+        swe/src/swe/common/datetime.cpp
+
         swe/src/swe/math.cpp
 )
 
 target_include_directories(swe
     PUBLIC
         swe/src
+        ${SWE_GENERATED_INCLUDE_DIRS}
     PRIVATE
         swe/src/swe
+)
+
+set(SWE_COMPILE_OPTIONS)
+
+if (CMAKE_BUILD_TYPE MATCHES "(Debug)|(RelWithDebInfo)")
+    list(APPEND SWE_COMPILE_OPTIONS
+        -DSWE_DEBUG
+    )
+
+    list(APPEND SWE_COMPILE_OPTIONS
+        $<$<COMPILE_LANGUAGE:C,CXX>:-Wall>
+    )
+endif ()
+
+target_compile_options(swe
+    PUBLIC
+        ${SWE_COMPILE_OPTIONS}
 )
 
 message(STATUS)
@@ -34,8 +54,10 @@ message(STATUS "    C standard: ${CMAKE_C_STANDARD}")
 message(STATUS "    C compiler: ${CMAKE_C_COMPILER}")
 message(STATUS "    C++ standard: ${CMAKE_CXX_STANDARD}")
 message(STATUS "    C++ compiler: ${CMAKE_CXX_COMPILER}")
+message(STATUS "    Compile options: ${SWE_COMPILE_OPTIONS}")
 message(STATUS "    Options:")
 message(STATUS "        SWE_BUILD_TESTS: ${SWE_BUILD_TESTS}")
+message(STATUS "        SWE_BUILD_EDITOR: ${SWE_BUILD_EDITOR}")
 message(STATUS)
 
 add_external(swe)

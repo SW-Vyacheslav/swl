@@ -1,8 +1,8 @@
-#ifndef SWE_MATH_MAT2X2_H_
-#define SWE_MATH_MAT2X2_H_
+#ifndef SWE_MATH_MAT2X2_HPP_
+#define SWE_MATH_MAT2X2_HPP_
 
-#include "swe/math/common.h"
-#include "swe/math/vec2.h"
+#include "swe/math/common.hpp"
+#include "swe/math/vec2.hpp"
 
 namespace swe
 {
@@ -37,4 +37,4 @@ constexpr mat<2, 2, T>::mat()
 
 } // namespace swe
 
-#endif // SWE_MATH_MAT2X2_H_
+#endif // SWE_MATH_MAT2X2_HPP_

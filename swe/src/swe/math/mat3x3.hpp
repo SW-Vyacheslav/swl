@@ -1,8 +1,8 @@
-#ifndef SWE_MATH_MAT3X3_H_
-#define SWE_MATH_MAT3X3_H_
+#ifndef SWE_MATH_MAT3X3_HPP_
+#define SWE_MATH_MAT3X3_HPP_
 
-#include "swe/math/common.h"
-#include "swe/math/vec3.h"
+#include "swe/math/common.hpp"
+#include "swe/math/vec3.hpp"
 
 namespace swe
 {
@@ -31,4 +31,4 @@ constexpr mat<3, 3, T>::mat()
 
 } // namespace swe
 
-#endif // SWE_MATH_MAT3X3_H_
+#endif // SWE_MATH_MAT3X3_HPP_

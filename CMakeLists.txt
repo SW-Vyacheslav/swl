@@ -20,6 +20,10 @@ include(cmake/external.cmake)
 
 include(cmake/swe.cmake)
 
+if (SWE_BUILD_EDITOR)
+    include(cmake/swe_editor.cmake)
+endif ()
+
 if (SWE_BUILD_TESTS)
     include(cmake/tests.cmake)
 endif ()

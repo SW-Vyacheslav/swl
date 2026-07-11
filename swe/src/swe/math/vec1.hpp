@@ -1,7 +1,7 @@
-#ifndef SWE_MATH_VEC1_H_
-#define SWE_MATH_VEC1_H_
+#ifndef SWE_MATH_VEC1_HPP_
+#define SWE_MATH_VEC1_HPP_
 
-#include "swe/math/common.h"
+#include "swe/math/common.hpp"
 
 namespace swe
 {
@@ -74,4 +74,4 @@ template<typename T> constexpr bool operator!=(const vec<1, T>& lhs, const vec<1
 
 #include "swe/math/inl/vec1.inl"
 
-#endif // SWE_MATH_VEC1_H_
+#endif // SWE_MATH_VEC1_HPP_

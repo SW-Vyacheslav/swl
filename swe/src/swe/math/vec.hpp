@@ -1,10 +1,10 @@
-#ifndef SWE_MATH_VEC_H_
-#define SWE_MATH_VEC_H_
+#ifndef SWE_MATH_VEC_HPP_
+#define SWE_MATH_VEC_HPP_
 
-#include "swe/math/vec1.h"
-#include "swe/math/vec2.h"
-#include "swe/math/vec3.h"
-#include "swe/math/vec4.h"
+#include "swe/math/vec1.hpp"
+#include "swe/math/vec2.hpp"
+#include "swe/math/vec3.hpp"
+#include "swe/math/vec4.hpp"
 
 namespace swe
 {
@@ -31,4 +31,4 @@ template<typename T> vec<3, T> cross(const vec<3, T>& v1, const vec<3, T>& v2);
 
 #include "swe/math/inl/vec.inl"
 
-#endif // SWE_MATH_VEC_H_
+#endif // SWE_MATH_VEC_HPP_

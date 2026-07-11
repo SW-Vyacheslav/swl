@@ -1,4 +1,4 @@
-#include "swe/math/vec.h"
+#include "swe/math/vec.hpp"
 
 #include <cmath>
 
