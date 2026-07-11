@@ -1,0 +1,19 @@
+{
+    "cmake.automaticReconfigure": false,
+    "cmake.buildBeforeRun": true,
+    "cmake.configureOnEdit": true,
+    "cmake.configureOnOpen": false,
+    "cmake.generator": "Unix Makefiles",
+    "cmake.saveBeforeBuild": true,
+    "cmake.useCMakePresets": "always",
+    "cmake.configureArgs": [
+        "-DSWE_BUILD_TESTS=ON"
+    ],
+
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.refactoring.includeHeader": "never",
+
+    "files.associations": {
+        "jsonc": "json"
+    }
+}
