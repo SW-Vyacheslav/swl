@@ -2,8 +2,10 @@ add_library(swe)
 
 set(SWE_LIBRARY_NAME "swe-${SWE_VERSION}")
 
-if (CMAKE_BUILD_TYPE MATCHES "(Debug)|(RelWithDebInfo)")
+if (CMAKE_BUILD_TYPE MATCHES "(Debug)")
     string(APPEND SWE_LIBRARY_NAME "d")
+elseif (CMAKE_BUILD_TYPE MATCHES "(RelWithDebInfo)")
+    string(APPEND SWE_LIBRARY_NAME "rd")
 endif ()
 
 set_target_properties(swe
@@ -13,28 +15,31 @@ set_target_properties(swe
 
 target_sources(swe
     PRIVATE
-        swe/src/swe/common/datetime.cpp
+        swe_engine/src/swe/common/datetime.cpp
 
-        swe/src/swe/math.cpp
+        swe_engine/src/swe/math.cpp
 )
 
 target_include_directories(swe
     PUBLIC
-        swe/src
+        swe_engine/src
         ${SWE_GENERATED_INCLUDE_DIRS}
     PRIVATE
-        swe/src/swe
+        swe_engine/src/swe
 )
 
 set(SWE_COMPILE_OPTIONS)
 
-if (CMAKE_BUILD_TYPE MATCHES "(Debug)|(RelWithDebInfo)")
+if (CMAKE_BUILD_TYPE MATCHES "(Debug)")
     list(APPEND SWE_COMPILE_OPTIONS
         -DSWE_DEBUG
-    )
-
-    list(APPEND SWE_COMPILE_OPTIONS
         $<$<COMPILE_LANGUAGE:C,CXX>:-Wall>
+    )
+endif ()
+
+if (CMAKE_BUILD_TYPE MATCHES "(RelWithDebInfo)")
+    list(APPEND SWE_COMPILE_OPTIONS
+        -DSWE_RELDEBUG
     )
 endif ()
 

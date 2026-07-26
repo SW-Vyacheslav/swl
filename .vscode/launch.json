@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "swe_editor",
+            "name": "swe-editor",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${command:cmake.launchTargetDirectory}/swe_editor",
+            "program": "${command:cmake.launchTargetDirectory}/swe-editor",
             "cwd": "${command:cmake.launchTargetDirectory}",
             "environment": [],
             "args": [],
@@ -29,10 +29,10 @@
             ]
         },
         {
-            "name": "swe_tests",
+            "name": "swe-tests",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${command:cmake.launchTargetDirectory}/swe_tests",
+            "program": "${command:cmake.launchTargetDirectory}/swe-tests",
             "cwd": "${command:cmake.launchTargetDirectory}",
             "environment": [],
             "args": [],

@@ -1,15 +1,11 @@
 {
     "cmake.automaticReconfigure": false,
-    "cmake.buildBeforeRun": true,
-    "cmake.configureOnEdit": true,
+    "cmake.buildBeforeRun": false,
+    "cmake.configureOnEdit": false,
     "cmake.configureOnOpen": false,
-    "cmake.generator": "Unix Makefiles",
+    "cmake.parallelJobs": 0,
     "cmake.saveBeforeBuild": true,
     "cmake.useCMakePresets": "always",
-    "cmake.configureArgs": [
-        "-DSWE_BUILD_TESTS=OFF",
-        "-DSWE_BUILD_EDITOR=ON"
-    ],
 
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "C_Cpp.refactoring.includeHeader": "never",

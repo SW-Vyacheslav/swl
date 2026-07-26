@@ -21,15 +21,15 @@
 #define SWE_PRINT_WARN_EX(...)        ::swe::detail::swe_print_warn_ex(__FILE__, SWE_PRETTY_FUNCTION, __LINE__, __VA_ARGS__)
 
 #ifdef SWE_DEBUG
-#define SWE_DEBUG_PRINT_INFO(...)        SWE_PRINT_INFO_EX(__VA_ARGS__)
-#define SWE_DEBUG_PRINT_ERROR(...)       SWE_PRINT_ERROR_EX(__VA_ARGS__)
-#define SWE_DEBUG_PRINT_ERROR_ERRNO(...) SWE_PRINT_ERROR_EX_ERRNO(__VA_ARGS__)
-#define SWE_DEBUG_PRINT_WARN(...)        SWE_PRINT_WARN_EX(__VA_ARGS__)
+    #define SWE_DEBUG_PRINT_INFO(...)        SWE_PRINT_INFO_EX(__VA_ARGS__)
+    #define SWE_DEBUG_PRINT_ERROR(...)       SWE_PRINT_ERROR_EX(__VA_ARGS__)
+    #define SWE_DEBUG_PRINT_ERROR_ERRNO(...) SWE_PRINT_ERROR_EX_ERRNO(__VA_ARGS__)
+    #define SWE_DEBUG_PRINT_WARN(...)        SWE_PRINT_WARN_EX(__VA_ARGS__)
 #else
-#define SWE_DEBUG_PRINT_INFO(...)
-#define SWE_DEBUG_PRINT_ERROR(...)
-#define SWE_DEBUG_PRINT_ERROR_ERRNO(...)
-#define SWE_DEBUG_PRINT_WARN(...)
+    #define SWE_DEBUG_PRINT_INFO(...)
+    #define SWE_DEBUG_PRINT_ERROR(...)
+    #define SWE_DEBUG_PRINT_ERROR_ERRNO(...)
+    #define SWE_DEBUG_PRINT_WARN(...)
 #endif
 
 namespace swe

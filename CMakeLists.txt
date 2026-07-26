@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.18)
 
 include(cmake/options.cmake)
 
@@ -18,7 +18,7 @@ include(cmake/version.cmake)
 include(cmake/generated.cmake)
 include(cmake/external.cmake)
 
-include(cmake/swe.cmake)
+include(cmake/swe_engine.cmake)
 
 if (SWE_BUILD_EDITOR)
     include(cmake/swe_editor.cmake)

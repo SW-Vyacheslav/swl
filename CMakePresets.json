@@ -1,12 +1,35 @@
 {
     "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 21,
+        "patch": 0
+    },
     "configurePresets": [
         {
             "name": "debug",
-            "binaryDir": "${sourceDir}/build-${presetName}",
-            "toolchainFile": "cmake/toolchains/default.cmake",
+            "binaryDir": "${sourceDir}/build-debug",
+            "generator": "Unix Makefiles",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug"
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_C_COMPILER": "gcc-10",
+                "CMAKE_CXX_COMPILER": "g++-10",
+
+                "SWE_BUILD_TESTS": "OFF",
+                "SWE_BUILD_EDITOR": "ON"
+            }
+        },
+        {
+            "name": "release",
+            "binaryDir": "${sourceDir}/build-release",
+            "generator": "Unix Makefiles",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_C_COMPILER": "gcc-10",
+                "CMAKE_CXX_COMPILER": "g++-10",
+
+                "SWE_BUILD_TESTS": "OFF",
+                "SWE_BUILD_EDITOR": "ON"
             }
         }
     ]
